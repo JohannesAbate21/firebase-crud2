@@ -8,7 +8,6 @@ import {
   Link,
   useLocation,
 } from 'react-router-dom';
-
 import TodoDetails from './TodoDetails';
 
 // Firebase configuration
@@ -28,6 +27,7 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 function App() {
+  const [user, setUser] = useState(null);
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
   const [newDescription, setNewDescription] = useState('');
